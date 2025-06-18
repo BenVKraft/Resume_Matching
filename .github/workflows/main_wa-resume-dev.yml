@@ -64,6 +64,12 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
+      - name: List files before deployment
+        run: ls -la
+
+      - name: Show run.sh contents
+        run: cat run.sh
+
       
       - name: Login to Azure
         uses: azure/login@v2
