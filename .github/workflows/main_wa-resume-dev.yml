@@ -22,7 +22,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.13'
 
       - name: Create and start virtual environment
         run: |
@@ -64,19 +64,13 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      - name: List files before deployment
-        run: ls -la
-
-      - name: Show run.sh contents
-        run: cat run.sh
-
       
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_31FDB714A3A447099E233CD35B1283CC }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_22742D8A2D8141358A5CCE9A454A0EC9 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C3EF0692F5F84BAC906721242D67077E }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_25607A77390443B5A29174BAAD6F2897 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_5B122FB26EA842FCBBBCD73163622C21 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0C554E2518E74DBFBD107B719C6A8A34 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
